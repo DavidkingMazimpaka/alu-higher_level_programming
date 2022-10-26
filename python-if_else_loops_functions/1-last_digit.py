@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
+
 def digits(args):
     if args >= 0:
         x = args % 10
@@ -15,5 +16,4 @@ def digits(args):
         y = -x
         print(f"Last digit of {args} is {y} and is less than 6 and not 0")
 
-        
 digits(number)
