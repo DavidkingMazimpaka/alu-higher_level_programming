@@ -2,6 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 
+
 def digits(args):
     if args >= 0:
         x = args % 10
