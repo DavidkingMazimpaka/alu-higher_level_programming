@@ -14,5 +14,4 @@ def digits(args):
         x = -args % 10
         y = -x
         print(f"Last digit of {args} is {y} and is less than 6 and not 0")
-
 digits(number)
