@@ -1,4 +1,3 @@
 #!/usr/bin/python3
 def add(a, b):
-    print(a + b)
-add(2, 4)
+    return a + b
