@@ -6,7 +6,7 @@ def best_score(a_dictionary):
         name = ''
         score = 0
         for value in a_dictionary:
-            if a_dictionary[value] > 0:
+            if a_dictionary[value] > score:
                 name = value
                 score = a_dictionary[value]
     return name
