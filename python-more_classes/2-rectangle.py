@@ -5,6 +5,9 @@ create a rectangle class
 
 
 class Rectangle:
+    """
+    create rectangle
+    """
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
@@ -41,4 +44,3 @@ class Rectangle:
             return 0
         else:
             return 2*(self.width + self.height)
-        

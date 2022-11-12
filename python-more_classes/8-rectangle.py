@@ -5,6 +5,9 @@ create a rectangle class
 
 
 class Rectangle:
+    """
+    create rectangle
+    """
     number_of_instances = 0
     print_symbol = '#'
 

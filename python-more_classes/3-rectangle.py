@@ -5,6 +5,9 @@ create a rectangle class
 
 
 class Rectangle:
+    """
+        create rectangle
+    """
     def __init__(self, width=0, height=0):
         """
         init size with args
