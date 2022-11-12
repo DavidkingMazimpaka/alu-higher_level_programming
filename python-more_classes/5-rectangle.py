@@ -6,14 +6,9 @@ create a rectangle class
 
 class Rectangle:
     """
-    create rectangle
+    create a class rectangle
     """
     def __init__(self, width=0, height=0):
-        """
-        init width and height args
-        :param width:
-        :param height:
-        """
         self.__width = width
         self.__height = height
 
@@ -53,8 +48,11 @@ class Rectangle:
         return strip
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(
+        return "Rectangle ({}, {})".format(
             eval(str(self.width)), eval(str(self.height)))
+
+    def __del__(self):
+        print("Bye rectangle...")
 
     def area(self):
         return self.width * self.height
