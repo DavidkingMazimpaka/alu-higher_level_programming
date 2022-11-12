@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Create a square"""
+
+
 class Square:
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
@@ -61,4 +64,3 @@ class Square:
                 for o in range(self.__size):
                     print("#", end="")
                 print()
-

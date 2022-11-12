@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""Create a square"""
+
+
 class Square:
+    """Creating multiple functions and instances
+    """
     def __init__(self):
         self.__size = None
 
@@ -16,6 +21,8 @@ class Square:
             for j in range(self.__size):
                 print("#", end="")
             print()
+        """Creating functions from imported property
+        """
 
     @property
     def size(self):
