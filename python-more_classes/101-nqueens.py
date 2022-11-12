@@ -1,93 +1,82 @@
 #!/usr/bin/python3
 """
-Nqueens Declaration
+N queen solution
 """
 
 
-global N
-N = 4
+import sys
+import time
+from ortools.sat.python import cp_model
 
 
-def print_solution(board):
-    for i in range(N):
-        for j in range(N):
-            print(board[i][j], end=" ")
+class NQueenSolutionPrinter(cp_model.CpSolverSolutionCallback):
+    """Print intermediate solutions."""
+
+    def __init__(self, queens):
+        cp_model.CpSolverSolutionCallback.__init__(self)
+        self.__queens = queens
+        self.__solution_count = 0
+        self.__start_time = time.time()
+
+    def solution_count(self):
+        return self.__solution_count
+
+    def on_solution_callback(self):
+        current_time = time.time()
+        print('Solution %i, time = %f s' %
+              (self.__solution_count, current_time - self.__start_time))
+        self.__solution_count += 1
+
+        all_queens = range(len(self.__queens))
+        for i in all_queens:
+            for j in all_queens:
+                if self.Value(self.__queens[j]) == i:
+                    # There is a queen in column j, row i.
+                    print('Q', end=' ')
+                else:
+                    print('_', end=' ')
+            print()
         print()
 
 
-# A utility function to check if a queen can
-# be placed on board[row][col]. Note that this
-# function is called when "col" queens are
-# already placed in columns from 0 to col -1.
-# So we need to check only left side for
-# attacking queens
-def isSafe(board, row, col):
-    # Check this row on left side
-    for i in range(col):
-        if board[row][i] == 1:
-            return False
+def main(board_size):
+    # Creates the solver.
+    model = cp_model.CpModel()
 
-    # Check upper diagonal on left side
-    for i, j in zip(range(row, -1, -1),
-                    range(col, -1, -1)):
-        if board[i][j] == 1:
-            return False
+    # Creates the variables.
+    # The array index is the column, and the value is the row.
+    queens = [
+        model.NewIntVar(0, board_size - 1, 'x%i' % i) for i in range(board_size)
+    ]
 
-    # Check lower diagonal on left side
-    for i, j in zip(range(row, N, 1),
-                    range(col, -1, -1)):
-        if board[i][j] == 1:
-            return False
+    # Creates the constraints.
+    # All rows must be different.
+    model.AddAllDifferent(queens)
 
-    return True
+    # All columns must be different because the indices of queens are all
+    # different.
 
+    # No two queens can be on the same diagonal.
+    model.AddAllDifferent(queens[i] + i for i in range(board_size))
+    model.AddAllDifferent(queens[i] - i for i in range(board_size))
 
-def solveNQUtil(board, col):
-    # base case: If all queens are placed
-    # then return true
-    if col >= N:
-        return True
+    # Solve the model.
+    solver = cp_model.CpSolver()
+    solution_printer = NQueenSolutionPrinter(queens)
+    solver.parameters.enumerate_all_solutions = True
+    solver.Solve(model, solution_printer)
 
-    # Consider this column and try placing
-    # this queen in all rows one by one
-    for i in range(N):
-
-        if isSafe(board, i, col):
-
-            # Place this queen in board[i][col]
-            board[i][col] = 1
-
-            # recur to place rest of the queens
-            if solveNQUtil(board, col + 1):
-                return True
-
-            # If placing queen in board[i][col
-            # doesn't lead to a solution, then
-            # queen from board[i][col]
-            board[i][col] = 0
-
-    # if the queen can not be placed in any row in
-    # this column col then return false
-    return False
+    # Statistics.
+    print('\nStatistics')
+    print(f'  conflicts      : {solver.NumConflicts()}')
+    print(f'  branches       : {solver.NumBranches()}')
+    print(f'  wall time      : {solver.WallTime()} s')
+    print(f'  solutions found: {solution_printer.solution_count()}')
 
 
-def printSolution():
-    pass
-
-
-def solveNQ():
-    board = [[0, 0, 0, 0],
-             [0, 0, 0, 0],
-             [0, 0, 0, 0],
-             [0, 0, 0, 0]]
-
-    if solveNQUtil(board, 0):
-        print("Solution does not exist")
-        return False
-
-    printSolution()
-    return True
-
-
-# Driver Code
-solveNQ()
+if __name__ == '__main__':
+    # By default, solve the 8x8 problem.
+    size = 8
+    if len(sys.argv) > 1:
+        size = int(sys.argv[1])
+    main(size)
