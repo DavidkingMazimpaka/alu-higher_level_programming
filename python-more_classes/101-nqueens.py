@@ -10,7 +10,9 @@ from ortools.sat.python import cp_model
 
 
 class NQueenSolutionPrinter(cp_model.CpSolverSolutionCallback):
-    """Print intermediate solutions."""
+    """
+    Print intermediate solutions.
+    """
 
     def __init__(self, queens):
         cp_model.CpSolverSolutionCallback.__init__(self)
