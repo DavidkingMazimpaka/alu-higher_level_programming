@@ -11,13 +11,14 @@ class Square:
     def __init__(self, size=0):
         """
         init size
+        :param size:
         """
         self.__size = size
 
     @property
     def size(self):
         """
-        returns the size att
+        returns the size attribute
         :return:
         """
         return self.__size
@@ -26,6 +27,8 @@ class Square:
     def size(self, size):
         """
         assign the size to the size attribute
+        :param size:
+        :return:
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -36,4 +39,3 @@ class Square:
     def area(self):
         square_area = self.__size ** 2
         return square_area
-    
