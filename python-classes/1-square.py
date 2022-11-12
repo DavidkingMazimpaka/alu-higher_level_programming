@@ -9,4 +9,3 @@ class Square:
     """
     def __int__(self, size):
         self.__Square__size = size
-
