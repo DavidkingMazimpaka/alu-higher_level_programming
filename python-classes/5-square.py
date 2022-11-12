@@ -8,7 +8,7 @@ class Square:
     def __init__(self):
         self.__size = None
 
-    def __int__(self, size):
+    def __int__(self, size=0):
         self.__size = size
 
     def area(self):
