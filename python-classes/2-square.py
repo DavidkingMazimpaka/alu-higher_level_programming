@@ -1,13 +1,20 @@
 #!/usr/bin/python3
-"""Create a square"""
+"""Create a square """
 
 
 class Square:
-    """Creating a function and instance"""
+    """
+    Create a square
+        Has a private Instance att: size
+    """
 
-    def __int__(self, size=0):
+    def __init__(self, size=0):
+        """
+        init size
+        """
         if not isinstance(size, int):
-            raise TypeError('size must be an integer')
-        if size < 0:
-            raise TypeError('size must be >= 0')
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+
         self.__size = size
