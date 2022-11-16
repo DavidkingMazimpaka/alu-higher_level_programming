@@ -1,4 +1,7 @@
 #!/usr/bin/python3
 class LockedClass:
-    if classmethod is not first_name:
+    """
+    Class with no class or object attribute
+    """
+    if classmethod is not classmethod:
         pass
