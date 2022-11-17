@@ -1,42 +1,27 @@
 #!/usr/bin/python3
+"""Class Rectangle inherited from BaseGeometry (7-base_geometry.py)
 """
-Define class BaseGeo
-"""
 
 
-def integer_validator(name, value):
-    """
-    method integer_validator
-    :param name:
-    :param value:
-    :return:
-    """
-    if type(value) != int:
-        raise TypeError('{} must be an integer'.format(name))
-    if value <= 0:
-        raise ValueError('{} must be greater than 0'.format(name))
-
-
-class BaseGeometry:
-    """
-    Class to inherit BaseGeometry
-    """
-    def area(self):
-        raise Exception('area() is not implemented')
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
+    """Rect inherits the BaseGeometry
     """
-    inherited BaseGeo to Rectangle
-    """
+
     def __init__(self, width, height):
-        integer_validator("width", width)
-        integer_validator("height", height)
+        """method init
+        """
+        self.integer_validator('width', width)
         self.__width = width
+        self.integer_validator('height', height)
         self.__height = height
 
-    def __str__(self):
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
-
     def area(self):
-        return self.__width * self.__height
+        """Function to return the area of the rectangle"""
+        return self.__height * self.__width
+
+    def __str__(self):
+        """Returns [Rectangle] """
+        return str("[Rectangle] {}/{}".format(self.__width, self.__height))
