@@ -28,5 +28,3 @@
 
 >>> new_list
 [4, 2, -1]
-Footer
-© 2022 GitHub, Inc.
