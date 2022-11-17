@@ -1,7 +1,15 @@
 #!/usr/bin/python3
+"""
+Class Definition
+"""
+
+
+class LockedClass:
+    pass
+
+
 class LockedClass:
     """
-    Class with no class or object attribute
+    class is locked
     """
-    if classmethod is not classmethod:
-        pass
+    first_name = LockedClass()
