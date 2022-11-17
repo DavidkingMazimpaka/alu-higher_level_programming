@@ -31,23 +31,47 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     def __init__(self, width, height):
+        """
+        method init width and height
+        :param width:
+        :param height:
+        """
         integer_validator("width", width)
         integer_validator("height", height)
         self.__width = width
         self.__height = height
 
     def __str__(self):
+        """
+        return string
+        :return:
+        """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
     def area(self):
+        """
+        method to return area
+        :return:
+        """
         return self.__width * self.__height
 
 
 class Square(Rectangle):
+    """
+    inherited Rec to Square
+    """
     def __init__(self, size):
+        """
+        method init with arg size
+        :param size:
+        """
         integer_validator("size", size)
         self.__size = size
         super().__init__(self.__size, self.__size)
 
     def __str__(self):
+        """
+        built-in method self
+        :return:
+        """
         return "[Square] {}/{}".format(self.__size, self.__size)

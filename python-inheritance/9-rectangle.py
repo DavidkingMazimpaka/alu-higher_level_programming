@@ -5,6 +5,12 @@ Define class BaseGeo
 
 
 def integer_validator(name, value):
+    """
+    method integer_validator
+    :param name:
+    :param value:
+    :return:
+    """
     if type(value) != int:
         raise TypeError('{} must be an integer'.format(name))
     if value <= 0:
