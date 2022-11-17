@@ -1,16 +1,14 @@
-#!/usr/bin/python3
+#!usr/bin/python3
 """
-Define class Mylist
+class that inherits built-in function
 """
 
 
 class MyList(list):
-    """
-    function print_sorted
-    """
+    """This Class inherits the built-in function list"""
+
     def print_sorted(self):
-        """
-        method print_sorted
-        :return:
-        """
-        print(sorted(self))
+        """Prints the list in a sorted order  """
+        sorted_list = self[:]
+        sorted_list.sort()
+        print("{}".format(sorted_list))
