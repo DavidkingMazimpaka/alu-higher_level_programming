@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Define method write_file
+"""
+
+
 def write_file(filename="", text=""):
     """ write_file
     Args:

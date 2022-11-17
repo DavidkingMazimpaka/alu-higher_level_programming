@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+method read_file declaration
+"""
+
+
 def read_file(filename=""):
     """ read-file print the file content
     Args:

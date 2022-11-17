@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Defining method append_write
+"""
+
+
 def append_write(filename="", text=""):
     """ write_file
     Args:
