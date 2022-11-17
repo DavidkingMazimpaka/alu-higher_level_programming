@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+"""
+Class Rectangle that inherited from BaseGeometry (7-base_geometry.py)
+"""
+
+
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
-"""
-Define inherited object
-"""
+
+
+def integer_validator():
+    pass
 
 
 class Rectangle(BaseGeometry):
@@ -16,6 +22,7 @@ class Rectangle(BaseGeometry):
         :param height:
         """
         super().__init__()
-        super().integer_validator("width", width)
-        super().integer_validator("height", height)
+        self.height = height
+        integer_validator()
+        integer_validator()
         self.__width = width
