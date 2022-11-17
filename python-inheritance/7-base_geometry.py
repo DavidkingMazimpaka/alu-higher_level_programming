@@ -1,24 +1,18 @@
 #!/usr/bin/python3
-"""
-Define class BaseGeo
-"""
-
-
-def integer_validator(name, value):
-    if type(value) != int:
-        raise TypeError('{} must be an integer'.format(name))
-    if value <= 0:
-        raise ValueError('{} must be greater than 0'.format(name))
+"""Public instance method: def area(self):"""
 
 
 class BaseGeometry:
-    """
-    Class BaseGeometry
-    """
+    """Base class"""
+
     def area(self):
-        """
-        :returns area
-        :return:
-        """
-        raise Exception('area() is not implemented')
-    
+        """raise an exception for now"""
+        raise Exception("area() is not implemented")
+
+    @staticmethod
+    def integer_validator(name, value):
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
