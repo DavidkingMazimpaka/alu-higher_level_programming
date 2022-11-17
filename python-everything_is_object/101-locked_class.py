@@ -12,4 +12,9 @@ class LockedClass:
     """
     class is locked
     """
-    first_name = LockedClass()
+
+    global first_name
+    try:
+        first_name = LockedClass()
+    except AttributeError:
+        print(f"{LockedClass}  object has no attribute {first_name}")
