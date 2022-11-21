@@ -2,7 +2,8 @@
 """
 This file checks and fetches the status of current url from the server
 """
-import urllib.request
+import urllib
+from urllib.request import urlopen
 
 
 if __name__ == "__main__":
