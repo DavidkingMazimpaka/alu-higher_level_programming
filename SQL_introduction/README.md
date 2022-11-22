@@ -1,0 +1,3 @@
+## DATABASE IS AWESOME, THAT BRINGS US TO THE WORLD OF "SQL"
+### SQL IS STRUCTURED QUERY LANGUAGE
+#### THis is going to be FUN !!!!!!!!!!!!!!!!
