@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """a Python script that fetches an url"""
-
-
 import urllib.request
 
 
