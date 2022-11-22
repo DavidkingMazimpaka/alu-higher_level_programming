@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Fetching the url from the server
-"""
+Fetching the url from the server"""
 import urllib.request
 
 
