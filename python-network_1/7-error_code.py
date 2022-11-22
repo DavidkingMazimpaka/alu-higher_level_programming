@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""a script that takes in a URL, sends a request to the URL and displays the body of the response"""
+"""take an url and display the values"""
+
 import requests
 import sys
-
 
 if __name__ == "__main__":
     """send the email"""
