@@ -1,2 +1,2 @@
-# a query that show the available databases
+-- a query that show the available databases
 show DATABASES;
