@@ -9,7 +9,7 @@ Now use it:
     1) simple text with separator character
     >>> text_indentation('Hello. Holberton? School')
     Hello.
-    <BLANK-LINE>
+    <BLANKLINE>
     Holberton?
-    <BLANK-LINE>
+    <BLANKLINE>
     School
