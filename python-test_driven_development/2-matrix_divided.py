@@ -20,4 +20,3 @@ def matrix_divided(matrix, div):
         raise TypeError(message)
     except ZeroDivisionError:
         raise ZeroDivisionError('division by zero')
-
