@@ -11,7 +11,7 @@ Now use it:
     My name is David Mazimpaka
 
     2) first name
-    >>> say_my_name("King")
+    >>> say_my_name("Walter")
     My name is King
 
     3) no parameters
