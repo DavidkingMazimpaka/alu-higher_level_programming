@@ -41,3 +41,49 @@ Now use it:
     10) type return with int 
     >>> type(add_integer(5, 5))
     <class 'int'>
+
+    11) type return with float 
+    >>> type(add_integer(5.6, 5.9))
+    <class 'int'>
+
+    12) string - int
+    >>> add_integer("holberton", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    13) int - string
+    >>> add_integer(5, "School")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    14) one integer
+    >>> add_integer(6)
+    104
+
+    15) one float
+    >>> add_integer(6.4)
+    104
+
+    16) one string
+    >>> add_integer("holberton")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    17) no parameters
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    18) float - float
+    >>> add_integer(5.9, 5.9)
+    10
+
+    19) max integer - integer
+    >>> add_integer(1e400, 5)
+    Traceback (most recent call last):
+    OverflowError
+
+    20) integer - max integer
+    >>> add_integer(5, 1e400)
+    Traceback (most recent call last):
+    OverflowError
