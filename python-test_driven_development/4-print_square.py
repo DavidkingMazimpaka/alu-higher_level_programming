@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""
-a function that prints a square with the character #.
-"""
+""" function that prints a square of #"""
 
 
 def print_square(size):
     """
-    returning a square of #
+    a function with a parameter
     :param size:
     :return:
     """
@@ -21,7 +19,3 @@ def print_square(size):
         while i < size:
             print('#' * size)
             i += 1
-
-
-
-        
