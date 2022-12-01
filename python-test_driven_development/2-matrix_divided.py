@@ -6,8 +6,9 @@ A python file that has a function with division of all elements of a matrix
 
 def matrix_divided(matrix, div):
     """
-    a function that divides the elemets of a matrix by a divider
+    a function that divides the elements of a matrix by a divider
     """
+    global matrix_rowSize
     for i in matrix:
         if not isinstance(i, list):
             raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
@@ -25,7 +26,7 @@ def matrix_divided(matrix, div):
         raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
     if matrix is None:
         raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
-    
+
     for i in matrix:
         if not isinstance(i, list):
             raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
@@ -36,11 +37,9 @@ def matrix_divided(matrix, div):
         for j in i:
             if not isinstance(j, (int, float)):
                 raise TypeError('matrix must be a matrix (list of lists) of integers/floats')
-    
-    
+
     """Creating new Matrix"""
     return list(map
-        (lambda a: list(map(
-                lambda b: round(b / div, 2), a
-        )), matrix))
-        
+                (lambda a: list(map(
+                    lambda b: round(b / div, 2), a
+                )), matrix))
