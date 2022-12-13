@@ -10,10 +10,9 @@ def text_indentation(text):
     :param text:
     :return:
     """
-    if not isinstance(text, str):
+    if type(text) != str:
         raise TypeError('text must be a string')
-    te = text.replace('.', '.\n\n')
-    te = te.replace(':', ':\n\n')
-    te = te.replace('?', '?\n\n')
-    te = te.replace('\n ', '\n')
-    print(te)
+    message = (':' + '\n\n').join([x.strip(" ") for x in text.split(':')])
+    message = ('.' + '\n\n').join([y.strip(" ") for y in message.split('.')])
+    message = ('?' + '\n\n').join([z.strip(" ") for z in message.split('?')])
+    print(message, end="")
