@@ -1,23 +1,16 @@
 #!/usr/bin/python3
-"""
-Define class Base
-"""
+"""create a base class"""
 
 import json
 import csv
 
 
 class Base:
-    """
-    creating class Base
-    """
+    """base class"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        init method with id parameter
-        :param id:
-        """
+        """function for base"""
         if id is not None:
             self.id = id
         else:
@@ -26,35 +19,22 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """
-        returning json file
-        :param list_dictionaries:
-        :return:
-        """
+        """ json must be returned """
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """
-        method that saves the json file
-        :param list_objs:
-        :return:
-        """
-        dictionary_list = None
+        """function to save json"""
+        dict1_list = None
         if list_objs is not None:
-            dictionary_list = [i.to_dictionary() for i in list_objs]
+            dict1_list = [i.to_dictionary() for i in list_objs]
         with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
-            f.write(Base.to_json_string(dictionary_list))
+            f.write(Base.to_json_string(dict1_list))
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """
-        method to save json csv file
-        :param list_objs:
-        :return:
-        """
         global dict_list
         if list_objs is not None:
             if cls.__name__ == "Square":
@@ -70,11 +50,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """
-        method that updates and adds to the file
-        :param json_string:
-        :return:
-        """
+        """ update and add """
         if json_string is None:
             return []
         else:
@@ -82,11 +58,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """
-        returning the instance 'create' with parameter
-        :param dictionary:
-        :return:
-        """
+        """ return instance """
         if cls.__name__ == 'Square':
             shape = cls(1)
         else:
@@ -96,10 +68,6 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """
-        a method that return cls
-        :return:
-        """
         try:
             with open(cls.__name__ + '.json') as f:
                 text = f.read()
@@ -109,10 +77,6 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """
-        a method that opens from json file
-        :return:
-        """
         try:
             with open(cls.__name__ + '.csv') as f:
                 text_dict = csv.DictReader(f)
@@ -133,9 +97,4 @@ class Base:
             return []
 
     def update(self, param):
-        """
-        a method that updates a current argument
-        :param param:
-        :return:
-        """
         pass
