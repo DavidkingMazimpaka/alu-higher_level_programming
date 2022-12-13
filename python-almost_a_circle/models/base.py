@@ -50,6 +50,11 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """
+        method to save json csv file
+        :param list_objs:
+        :return:
+        """
         global dict_list
         if list_objs is not None:
             if cls.__name__ == "Square":
@@ -91,6 +96,10 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """
+        a method that return cls
+        :return:
+        """
         try:
             with open(cls.__name__ + '.json') as f:
                 text = f.read()
@@ -100,6 +109,10 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """
+        a method that opens from json file
+        :return:
+        """
         try:
             with open(cls.__name__ + '.csv') as f:
                 text_dict = csv.DictReader(f)
@@ -120,4 +133,9 @@ class Base:
             return []
 
     def update(self, param):
+        """
+        a method that updates a current argument
+        :param param:
+        :return:
+        """
         pass
