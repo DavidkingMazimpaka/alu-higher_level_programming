@@ -1,16 +1,23 @@
 #!/usr/bin/python3
-"""creating a base class"""
+"""
+Define class Base
+"""
 
 import json
 import csv
 
 
 class Base:
-    """base class to soon be inherited"""
+    """
+    creating class Base
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """function for base"""
+        """
+        init method with id parameter
+        :param id:
+        """
         if id is not None:
             self.id = id
         else:
@@ -20,7 +27,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        static method to_json_string with parameter
+        returning json file
         :param list_dictionaries:
         :return:
         """
@@ -31,7 +38,9 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        class method to save json file
+        method that saves the json file
+        :param list_objs:
+        :return:
         """
         dictionary_list = None
         if list_objs is not None:
@@ -57,7 +66,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """
-        static method to add and update
+        method that updates and adds to the file
         :param json_string:
         :return:
         """
@@ -69,7 +78,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        returning the class instance
+        returning the instance 'create' with parameter
         :param dictionary:
         :return:
         """
@@ -82,10 +91,6 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """
-        class method that loads csv file
-        :return:
-        """
         try:
             with open(cls.__name__ + '.json') as f:
                 text = f.read()
