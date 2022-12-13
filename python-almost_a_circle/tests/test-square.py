@@ -4,11 +4,21 @@ import unittest
 
 from models.base import Base
 from models.square import Square
+"""
+Defining module
+"""
 
 
 class TestSquare(unittest.TestCase):
+    """
+    class TestSquare creation
+    """
 
     def setUp(self):
+        """
+        defining setUp method
+        :return:
+        """
         Base._Base__nb_objects = 0
 
     @classmethod
