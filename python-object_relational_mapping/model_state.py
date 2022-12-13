@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 """
 class definition and instances
 """
