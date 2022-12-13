@@ -8,18 +8,14 @@ from sqlalchemy.orm import Session
 from model_state import Base, State
 
 
-def inserting_to_db():
-    """
-    returning the state id
-    :return:
-    """
+def insert_to_state_obj():
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    state = State(state_Name='Louisiana')
+    state = State(name='Louisiana')
 
     session.add(state)
     session.commit()
@@ -29,4 +25,4 @@ def inserting_to_db():
 
 
 if __name__ == "__main__":
-    inserting_to_db()
+    insert_to_state_obj()
