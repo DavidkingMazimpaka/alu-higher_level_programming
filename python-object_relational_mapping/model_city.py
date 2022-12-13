@@ -1,2 +1,15 @@
-class City:
-    pass
+#!/usr/bin/python3
+"""Class definition of a state and an instance inheriting Base"""
+from sqlalchemy import Column, Integer, String, ForeignKey
+from model_state import Base
+
+
+class City(Base):
+    """
+    creating class City
+    """
+    __tablename__ = 'cities'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'))
