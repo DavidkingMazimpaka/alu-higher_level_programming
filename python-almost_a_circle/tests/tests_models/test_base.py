@@ -1,24 +1,15 @@
 #!/usr/bin/python3
 import unittest
 from models.base import Base
-"""
-Defining unittest module
-"""
 
 
 class TestBase(unittest.TestCase):
-    """
-    creating class TestBase inheriting
-    """
 
     def setUp(self):
         Base._Base__nb_objects = 0
 
     def test_initialization(self):
-        """
-        initiating class id when it is not passed
-        :return:
-        """
+        """test when not id is passed the base is initialized with the class id"""
         base = Base()
         base2 = Base()
         self.assertEqual(str(type(base)), "<class 'models.base.Base'>")
