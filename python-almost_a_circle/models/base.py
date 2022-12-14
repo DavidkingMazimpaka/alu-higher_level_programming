@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A base class"""
+"""Module definition"""
 
 import json
 import turtle
@@ -7,7 +7,7 @@ import csv
 
 
 class Base:
-    """A base class"""
+    """Create Base class"""
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -138,7 +138,17 @@ class Base:
 
     @classmethod
     def to_dictionary(cls, i):
+        """
+        to pass cls an i args method
+        :param i:
+        :return:
+        """
         pass
 
     def update(self, param):
+        """
+        updating method
+        :param param:
+        :return:
+        """
         pass
