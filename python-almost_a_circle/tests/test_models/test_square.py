@@ -111,13 +111,23 @@ class TestSquare(unittest.TestCase):
 
     def test_rectangle_create(self):
         shape = Square.create(**{'id': 89})
-        self.assertEqual(shape.to_dictionary(), {'id': 89, 'size': 1, 'x': 0, 'y': 0})
-        shape = Square.create(**{'id': 22, 'size': 12})
-        self.assertEqual(shape.to_dictionary(), {'id': 22, 'size': 12, 'x': 0, 'y': 0})
-        shape = Square.create(**{'id': 8, 'size': 45, 'x': 34})
-        self.assertEqual(shape.to_dictionary(), {'id': 8, 'size': 45, 'x': 34, 'y': 0})
-        shape = Square.create(**{'id': 4, 'size': 19, 'x': 25, 'y': 33})
-        self.assertEqual(shape.to_dictionary(), {'id': 4, 'size': 19, 'x': 25, 'y': 33})
+        self.assertEqual(shape.id, 89)
+
+        shape1 = Square.create(**{'id': 89, 'size': 1})
+        self.assertEqual(shape1.size, 1)
+        self.assertEqual(shape1.id, 89)
+
+        shape2 = Square.create(**{'id': 89, 'size': 1, 'x': 2})
+        self.assertEqual(shape2.size, 1)
+        self.assertEqual(shape2.x, 2)
+        self.assertEqual(shape2.id, 89)
+
+        shape3 = Square.create(**{'id': 89, 'size': 1,
+                                  'x': 2, 'y': 3})
+        self.assertEqual(shape3.size, 1)
+        self.assertEqual(shape3.x, 2)
+        self.assertEqual(shape3.y, 3)
+        self.assertEqual(shape3.id, 89)
 
     def test_save_to_file(self):
         Square.save_to_file(None)
