@@ -111,7 +111,7 @@ class TestRectangle(unittest.TestCase):
         shape_2 = Rectangle(2, 2, 3)
         shape_3 = Rectangle(2, 2, 0, 1)
         shape.display()
-        self.assertEqual(mock_print.mock_calls, [call("##"), call("##")])
+        self.assertEqual(mock_print.mock_calls, [call("#"), call("#")])
         mock_print.reset_mock()
         shape_2.display()
         self.assertEqual(mock_print.mock_calls, [call("   ##"), call("   ##")])
@@ -121,7 +121,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_to_dictionary(self):
         shape = Rectangle(2, 2)
-        self.assertEqual(shape.to_dictionary(), {"id": 1, 'width': 2, 'height': 2, 'x': 0, 'y': 0})
+        self.assertEqual(shape.to_dictionary(), {"id": 89, 'width': 1, 'height': 2, 'x': 0, 'y': 0})
 
     def test_update(self):
         shape = Rectangle(2, 2)
