@@ -106,7 +106,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(shape), "[Rectangle] (1) 0/0 - 2/2")
         self.assertEqual(str(shape2), "[Rectangle] (2) 1/3 - 2/5")
 
-    @patch("builtins.print")
     def test_display(self):
         shape = Rectangle(4, 2)
         shape1 = Rectangle(4, 2, 3)
