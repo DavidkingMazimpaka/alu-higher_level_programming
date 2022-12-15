@@ -210,7 +210,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(shape.y, 4)
 
     def test_save_to_file(self):
-        os.remove(Rectangle)
         Rectangle.save_to_file(None)
         with open('Rectangle.json', 'r', encoding="utf-8") as f:
             text = f.read()
