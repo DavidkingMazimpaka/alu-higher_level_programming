@@ -16,6 +16,7 @@ class Rectangle(Base):
             y {int} -- (default: {0})
             id {[type]} -- super attribute (default: {None})
         """
+        self.id = None
         self.width = width
         self.height = height
         self.x = x
