@@ -4,8 +4,7 @@ const number = Number(Math.trunc(process.argv[2]));
 function factorial (n) {
   if (!n) {
     return 1;
-  }
-  else {
+  } else {
     return n * factorial(n - 1);
   }
 }

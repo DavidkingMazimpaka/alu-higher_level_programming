@@ -14,7 +14,6 @@ if (data.length > 3) {
   }
   maxVal = Math.max(...numbers2);
   console.log(maxVal);
-}
-else {
+} else {
   console.log(0);
 }

@@ -8,7 +8,6 @@ if (number) {
     }
     console.log(letter);
   }
-}
-else {
+} else {
   console.log('Missing size');
-  }
+}
