@@ -18,4 +18,3 @@ let appendFile1 = args[0];
 concat(file, appendFile1);
 appendFile1 = args[1];
 concat(file, appendFile1);
-
